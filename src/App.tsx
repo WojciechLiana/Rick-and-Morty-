@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Link} from "@reach/router";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props: any): JSX.Element {
+
+    return (
+        <div className="App">
+            <header className="header">
+                <h1>Rick and Morty</h1>
+                <p>Choose your favourite episode</p>
+                <Link to="/">Home</Link>
+                <Link to="/fav">Favourites</Link>
+            </header>
+            {props.children}
+        </div>
+    );
 }
 
 export default App;
